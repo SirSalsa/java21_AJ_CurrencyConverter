@@ -1,0 +1,14 @@
+{
+    "meta": {
+        "code": 200,
+        "disclaimer": "Usage subject to terms: https://currencyscoop.com/terms"
+    },
+    "response": {
+        "timestamp": 1663783928,
+        "date": "2022-09-21",
+        "from": "USD",
+        "to": "SEK",
+        "amount": 10,
+        "value": 110.2772199
+    }
+}
