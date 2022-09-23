@@ -1,11 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane minHeight="500.0" minWidth="700.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18" fx:controller="controllers.HistoricalValuesController">
+<AnchorPane minHeight="500.0" minWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.HistoricalValuesController">
    <children>
-      <Button layoutX="320.0" layoutY="238.0" mnemonicParsing="false" onAction="#returnToMainScene" text="Go Back" />
+      <HBox layoutX="1.0" layoutY="-11.0" prefHeight="434.0" prefWidth="700.0">
+         <children>
+            <AnchorPane prefHeight="406.0" prefWidth="400.0">
+               <children>
+                  <TextField fx:id="baseCurrencyTextField" layoutX="101.0" layoutY="127.0" promptText="EUR, DKK..." />
+                  <TextField fx:id="targetCurrencyTextField" layoutX="101.0" layoutY="203.0" promptText="EUR, DKK..." />
+                  <ComboBox fx:id="comboBox" layoutX="100.0" layoutY="283.0" prefWidth="150.0" promptText="Time Interval" />
+                  <Label alignment="CENTER" layoutX="119.0" layoutY="258.0" prefHeight="25.0" prefWidth="111.0" text="Select Timeframe" />
+                  <Label alignment="CENTER" layoutX="106.0" layoutY="178.0" prefHeight="25.0" prefWidth="139.0" text="Comparison Currency" />
+                  <Label alignment="CENTER" layoutX="121.0" layoutY="102.0" prefHeight="25.0" prefWidth="111.0" text="Base Currency" />
+                  <Button fx:id="submitButton" layoutX="133.0" layoutY="347.0" mnemonicParsing="false" onAction="#submitHistoricalSearch" prefHeight="59.0" prefWidth="84.0" text="Submit">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+            <AnchorPane layoutX="210.0" layoutY="10.0" prefHeight="385.0" prefWidth="400.0">
+               <children>
+                  <LineChart layoutX="30.0" layoutY="110.0" prefHeight="272.0" prefWidth="291.0">
+                    <xAxis>
+                      <CategoryAxis side="BOTTOM" />
+                    </xAxis>
+                    <yAxis>
+                      <NumberAxis side="LEFT" />
+                    </yAxis>
+                  </LineChart>
+                  <Label alignment="CENTER" layoutX="-115.0" layoutY="22.0" prefHeight="47.0" prefWidth="230.0" text="Compare Historical Values">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="resultLabel" alignment="CENTER" layoutX="77.0" layoutY="382.0" prefHeight="38.0" prefWidth="197.0" text="150% Change" textFill="#03eb41">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="errorLabel" alignment="CENTER" layoutX="-161.0" layoutY="57.0" prefHeight="25.0" prefWidth="323.0" textFill="RED" />
+               </children>
+            </AnchorPane>
+         </children>
+      </HBox>
+      <Pane layoutY="428.0" prefHeight="72.0" prefWidth="701.0">
+         <children>
+            <Button layoutX="309.0" layoutY="6.0" mnemonicParsing="false" onAction="#returnToMainScene" prefHeight="30.0" prefWidth="84.0" text="Go Back" />
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

@@ -36,6 +36,11 @@ public class ConvertController implements Initializable {
 	private Button submitButton;
 	@FXML
 	private Label resultLabel;
+	
+	@Override
+	public void initialize(URL url, ResourceBundle rb) {
+		// TODO
+	}
 
 	public void submit(ActionEvent event) {
 
@@ -103,18 +108,13 @@ public class ConvertController implements Initializable {
 	}
 
 	public void returnToMainScene(ActionEvent event) throws IOException {
-		Parent tableViewParent = FXMLLoader.load(getClass().getResource("Main.fxml"));
-		Scene tableViewScene = new Scene(tableViewParent);
+		Parent mainParent = FXMLLoader.load(getClass().getResource("Main.fxml"));
+		Scene mainScene = new Scene(mainParent);
 
 		// This line gets the Stage information
 		Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
 
-		window.setScene(tableViewScene);
+		window.setScene(mainScene);
 		window.show();
-	}
-
-	@Override
-	public void initialize(URL url, ResourceBundle rb) {
-		// TODO
 	}
 }

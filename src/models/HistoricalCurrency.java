@@ -10,4 +10,16 @@ public class HistoricalCurrency {
 	private String targetCurrency;
 	private ArrayList<HistoricalRate> ratesList = new ArrayList<>();
 	
+	public LocalDate getDate() {
+		return date;
+	}
+	public String getBaseCurrency() {
+		return baseCurrency;
+	}
+	public String getTargetCurrency() {
+		return targetCurrency;
+	}
+	public ArrayList<HistoricalRate> getRatesList() {
+		return ratesList;
+	}
 }
