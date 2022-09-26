@@ -68,7 +68,6 @@ public class HistoricalValuesController implements Initializable {
 	public void submitHistoricalSearch(ActionEvent event) throws InvocationTargetException {
 		// Resets errorlabel
 		errorLabel.setText("");
-		resultLabel.setText("");
 
 		String currency1 = baseCurrencyTextField.getText().toUpperCase();
 		String currency2 = targetCurrencyTextField.getText().toUpperCase();
