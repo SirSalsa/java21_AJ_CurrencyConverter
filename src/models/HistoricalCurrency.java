@@ -1,25 +1,23 @@
 package models;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class HistoricalCurrency {
 
 	private LocalDate date;
-	private String baseCurrency;
-	private String targetCurrency;
-	private ArrayList<HistoricalRate> ratesList = new ArrayList<>();
-	
+	private double rate;
+
+	public HistoricalCurrency(LocalDate date, double rate) {
+		this.date = date;
+		this.rate = rate;
+	}
+
 	public LocalDate getDate() {
 		return date;
 	}
-	public String getBaseCurrency() {
-		return baseCurrency;
+
+	public double getRate() {
+		return rate;
 	}
-	public String getTargetCurrency() {
-		return targetCurrency;
-	}
-	public ArrayList<HistoricalRate> getRatesList() {
-		return ratesList;
-	}
+
 }

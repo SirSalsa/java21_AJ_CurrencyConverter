@@ -15,7 +15,7 @@ public class Main extends Application {
 		Parent root = FXMLLoader.load(getClass().getResource("/controllers/Main.fxml"));
 
 		Scene scene = new Scene(root);
-		//scene.getStylesheets().add(getClass().getResource("/resources/Main.css").toExternalForm());
+		// scene.getStylesheets().add(getClass().getResource("/resources/Main.css").toExternalForm());
 
 		stage.setTitle("Currency Converter");
 		stage.setScene(scene);
